@@ -1,0 +1,21 @@
+<div class="dashboard">
+    <h2>Welcome to the Dashboard</h2>
+  
+    <ng-template #noProjectsMessage>
+      <p>You have no projects yet 😞</p>
+    </ng-template>
+  
+    <div class="project-cards" *ngIf="projects.length > 0; else noProjectsMessage">
+      <div class="project-card" *ngFor="let project of projects">
+        <div class="card-header">
+          {{ project.projectName }}
+        </div>
+        <div class="card-body">
+          <p><strong>Description:</strong> {{ project.description }}</p>
+          <p><strong>Start Date:</strong> {{ project.startDate | date }}</p>
+          <p><strong>End Date:</strong> {{ project.endDate | date }}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  

@@ -1,0 +1,30 @@
+<!-- <div class="navbar">
+    <div class="container">
+      <a class="logo" href="http://localhost:4200/">Ragnar</a>
+      <nav>
+        <ul>
+          <li *ngIf="!isUserLoggedIn()"><a routerLink="login">Login</a></li>
+          <li *ngIf="!isUserLoggedIn()"><a href="#">Register</a></li>
+          <li *ngIf="isUserLoggedIn()"><button (click)="logout()">Logout</button></li>
+        </ul>
+      </nav>
+    </div>
+  </div> -->
+
+  <div class="navbar">
+    <div class="container">
+      <a class="logo" href="http://localhost:4200/">Ragnar</a>
+      <nav style="display: flex;">
+        <ul style="margin: auto;">
+          <li *ngIf="!isUserLoggedIn()"><a routerLink="login">Login</a></li>
+          <li *ngIf="!isUserLoggedIn()"><a href="userregister">Register</a></li>
+          <li *ngIf="isUserLoggedIn()">
+            <!-- Use string interpolation to display the welcome message -->
+            <span>Welcome, {{ userName }}</span>
+            <button (click)="logout()">Logout</button>
+          </li>
+        </ul>
+      </nav>
+    </div>
+  </div>
+  

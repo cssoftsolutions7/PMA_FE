@@ -1,0 +1,170 @@
+<!-- <div class="project-management">
+    <div class="project-selection">
+      <label for="projectSelect">Select a Project:</label>
+      <select id="projectSelect" [(ngModel)]="selectedProject" (change)="onSelectProject(selectedProject)">
+        <option *ngFor="let project of projects" [ngValue]="project">{{ project.projectName }}</option>
+      </select>
+    </div> -->
+
+
+
+<!-- <div *ngIf="selectedProject" class="project-details"> -->
+<!-- <button class="edit-button" (click)="onEditProject(selectedProject)">Edit</button> -->
+<!-- <button class="edit-button">Edit</button>
+        <h2>Project Name: {{ selectedProject.projectName }}</h2>
+        <p>Description: {{ selectedProject.description }}</p>
+        <p>Start Date: {{ selectedProject.startDate }}</p>
+        <p>End Date: {{ selectedProject.endDate }}</p>
+      </div> -->
+
+<!-- Add a new section to display assigned users -->
+<!-- <div *ngIf="userListOfProject" class="assigned-users">
+    <h3>Assigned Users</h3>
+    <ul>
+      <li *ngFor="let user of userListOfProject">{{ user.userName }}</li>
+    </ul>
+  </div>
+      
+  
+    <div class="task-list" *ngIf="selectedProject">
+        <h3>Tasks</h3>
+        <ul>
+          <li *ngFor="let task of selectedProject.tasks"> -->
+<!-- <input [id]="'task' + task.taskID" /> -->
+<!-- <label [for]="'task' + task.taskID">{{ task.taskName }}: {{ task.description }}</label>
+          </li>
+        </ul>
+      </div> -->
+
+
+
+
+
+
+
+
+<div class="project-management">
+    <div class="project-selection">
+        <label for="projectSelect">Select a Project:</label>
+        <select id="projectSelect" [(ngModel)]="selectedProject" (change)="onSelectProject(selectedProject)">
+            <option *ngFor="let project of projects" [ngValue]="project">{{ project.projectName }}</option>
+        </select>
+    </div>
+
+    <div *ngIf="selectedProject" class="project-details">
+        <button class="edit-button" (click)="openEditModal()">Edit</button>
+        <h2>Project Name: {{ selectedProject.projectName }}</h2>
+        <p>Description: {{ selectedProject.description }}</p>
+        <p class="startDate"><strong>Start Date:</strong>  {{ selectedProject.startDate | date}}</p>
+        <p class="endDate"><strong>End Date:</strong> {{ selectedProject.endDate | date}}</p>               
+    </div>
+
+    <div class="task-list" *ngIf="selectedProject">
+        <h3><strong>Project Tasks</strong></h3>
+        <ul>
+            <li *ngFor="let task of selectedProject.tasks">
+                <!-- <input [id]="'task' + task.taskID" /> -->
+                <label [for]="'task' + task.taskID"><strong>{{ task.taskName }}:</strong> {{ task.description }}</label>
+            </li>
+        </ul>
+    </div>
+</div>
+
+<!-- Add a separator -->
+<div class="separator"></div>
+
+<!-- Add a new section to display assigned users and assign/unassign buttons in a table -->
+<div *ngIf="userListOfProject" class="assigned-users">
+    <div class="table-container">
+        <button class="assign-button" (click)="openAssignUserModal()">Assign User</button>
+        <table>
+            <thead>
+                <tr>
+                    <th>User Name</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let user of userListOfProject">
+                    <td>{{ user.userName }}</td>                   
+                    <td>
+                      <button class="unassign-button" (click)="removeAssignUser(user.userID, selectedProject.projectID)">Unassign</button>
+                    </td>
+                  </tr>                  
+            </tbody>
+        </table>
+    </div>
+</div>
+
+
+<!-- Modal for assigning users -->
+<div id="assignUserModal" class="modal" [style.display]="showModal ? 'block' : 'none'">
+    <div class="modal-content">
+        <span class="close" (click)="closeAssignUserModal()">&times;</span>
+        <h2>Assign User to this Project</h2>
+        <label for="userSelect">Select a User:</label>
+        <select id="userSelect" [(ngModel)]="assignPayload.userID">
+            <option *ngFor="let user of allUsers" [ngValue]="user.userID">{{ user.userName }}</option>
+        </select>
+        <button class="assign-button" (click)="assignUser(assignPayload)">Assign</button>
+    </div>
+</div>
+
+
+
+
+<!-- Modal for editing project details -->
+<div id="editProjectModal" class="modal" [style.display]="isEditModalOpen ? 'block' : 'none'">
+    <div class="modal-content">
+        <span class="close" (click)="closeEditModal()">&times;</span>
+        <h2>Edit Project</h2>
+        <form (submit)="updateProjectClick(editProjectForm)">
+            <div class="form-group">
+                <label for="projectName">Project Name:</label>
+                <input type="text" id="projectName" name="projectName" [(ngModel)]="editProjectForm.projectName" required>
+            </div>
+            <div class="form-group">
+                <label for="description">Description:</label>
+                <textarea id="description" name="description" [(ngModel)]="editProjectForm.description"></textarea>
+            </div>
+            <div class="form-group">
+                <label for="startDate">Start Date:</label>
+                <input type="date" id="startDate" name="startDate" [(ngModel)]="editProjectForm.startDate" required>
+            </div>
+            <div class="form-group">
+                <label for="endDate">End Date:</label>
+                <input type="date" id="endDate" name="endDate" [(ngModel)]="editProjectForm.endDate" required>
+            </div>
+            <div class="form-group">
+                <button class="assign-button" type="submit">Save Changes</button>
+            </div>
+        </form>
+    </div>
+</div>
+
+
+
+<!-- <button type="button" class="save-button" (click)="saveNewProject()">Save</button> -->  
+
+
+
+
+
+<!-- Add a new section to display assigned users -->
+<!-- <div *ngIf="userListOfProject" class="assigned-users">
+    <h3>Assigned Users</h3>
+    <ul>
+        <li *ngFor="let user of userListOfProject">{{ user.userName }}</li>
+    </ul>
+</div> -->
+
+<!-- <div *ngIf="userListOfProject" class="assigned-users">
+    <h3>Assigned Users</h3>
+    <ul>
+      <li *ngFor="let user of userListOfProject">
+        <span>{{ user.userName }}</span> -->
+<!-- <button class="unassign-button" (click)="onUnassignUser(user)">Unassign</button> -->
+<!-- <button class="unassign-button">Unassign</button>
+      </li>
+    </ul>
+  </div> -->

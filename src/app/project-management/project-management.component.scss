@@ -1,0 +1,279 @@
+
+
+
+/* Enhanced styles for the project management page */
+.project-management {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+}
+
+.project-details {
+    position: relative; /* Added */
+    flex-basis: 30%;
+    padding: 20px;
+    background-color: #009688; /* Teal background color */
+    color: #fff; /* White text color */
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    margin-right: 20px; /* Add margin for spacing */
+}
+
+.project-details h2 {
+    font-size: 24px;
+    font-weight: bold; /* Make project name bold */
+    color: #fff; /* White text color */
+    margin-bottom: 10px;
+}
+
+.project-details p {
+    font-size: 16px;
+    margin-bottom: 5px;
+}
+
+.task-list {
+    flex-basis: 40%;
+    padding: 20px;
+    background-color: #f0f0f0; /* Light grey background color */
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+.task-list h3 {
+    font-size: 18px;
+    font-weight: bold; /* Make tasks heading bold */
+    margin-bottom: 10px;
+    color: #333; /* Darker text color */
+}
+
+.task-list ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.task-list li {
+    font-size: 16px;
+    margin-bottom: 5px;
+    transition: background-color 0.3s; /* Add hover transition */
+}
+
+.task-list li:hover {
+    background-color: #ddd; /* Light grey background on hover */
+}
+
+.team-members {
+    flex-basis: 25%;
+    padding: 20px;
+    background-color: #009688; /* Teal background color */
+    color: #fff; /* White text color */
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+.team-members h3 {
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+.edit-button {
+    position: absolute; /* Position the button absolutely within the container */
+    top: 10px; /* Adjust top position for spacing */
+    right: 10px; /* Adjust right position for spacing */
+    background-color: #333; /* Button background color */
+    color: #fff; /* Button text color */
+    border: none;
+    border-radius: 5px;
+    padding: 5px 10px;
+    cursor: pointer;
+  }
+  
+  .edit-button:hover {
+    background-color: #555; /* Button background color on hover */
+  }
+
+
+
+/* CSS for the "Assigned Users" section */
+.assigned-users {
+    flex-basis: 30%;
+    padding: 20px;
+    background-color: #f0f0f0;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    margin-top: 20px;
+    display: flex; /* Add flex display */
+    flex-direction: column; /* Arrange children in a column */
+    align-items: flex-start; /* Align children to the left */
+  }
+  
+  .assigned-users h3 {
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 10px;
+    color: #333;
+  }
+  
+  .assigned-users ul {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  .assigned-users li {
+    font-size: 16px;
+    margin-bottom: 5px;
+    display: flex; /* Add flex display */
+    justify-content: space-between; /* Space between user name and button */
+    align-items: center; /* Vertically center user name and button */
+  }
+  
+  .unassign-button {
+    background-color: #ff0000;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    padding: 5px 10px;
+    cursor: pointer;
+  }
+  
+  .unassign-button:hover {
+    background-color: #ff3333;
+  }
+
+ /* CSS for the "Assigned Users" section */
+.assigned-users {
+    flex-basis: 30%;
+    padding: 20px;
+    background-color: #f0f0f0;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  
+  /* CSS for the table */
+  .table-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+  }
+  
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+  }
+  
+  table th, table td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+  }
+  
+  table th {
+    background-color: #f0f0f0;
+    font-weight: bold;
+  }
+  
+  /* Button styles */
+  .assign-button {
+    background-color: #009688; /* Teal background color */
+    color: #fff; /* White text color */
+    border: none;
+    border-radius: 5px;
+    padding: 5px 10px;
+    margin-right: 10px;
+    cursor: pointer;
+  }
+  
+  .assign-button:hover {
+    background-color: #007A63; /* Teal background color on hover */
+  }
+
+  
+
+
+ /* CSS for the modal */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgba(0, 0, 0, 0.4); /* Black background with transparency */
+}
+
+.modal-content {
+    background-color: #fff;
+    margin: 15% auto; /* 15% from the top and centered */
+    padding: 20px;
+    border: 1px solid #888;
+    width: 50%; /* Could be more or less, depending on screen size */
+    border-radius: 5px;
+}
+
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+/* Style the dropdown select */
+label {
+    display: block;
+    margin-bottom: 10px; /* Add spacing between label and select */
+}
+
+#userSelect {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px; /* Add spacing below the select */
+}
+
+/* Style the assign button */
+.assign-button {
+    background-color: #009688;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    cursor: pointer;
+}
+
+.assign-button:hover {
+    background-color: #007c72; /* Darker color on hover */
+}
+  
+
+
+// for adding color in start date and end date
+
+.project-details p {
+    font-size: 16px;
+    margin-bottom: 5px;
+}
+
+.project-details p.startDate {
+    color: #1f1f1e; /* Green text color */
+    // font-weight: bold;   
+}
+
+.project-details p.endDate {
+    color: #1f1f1e; /* Red text color */
+    // font-weight: bold;    
+}
+/* You can further enhance the styles as per your design preferences. */

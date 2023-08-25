@@ -1,0 +1,89 @@
+/* Add these styles to your existing CSS */
+.navbar {
+    background-color: #009688;
+    color: #fff;
+    padding: 10px 0;
+  }
+  
+  .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+  }
+  
+  .logo {
+    font-size: 24px;
+    font-weight: bold;
+    text-decoration: none;
+    color: #fff;
+  }
+  
+  nav ul {
+    list-style: none;
+    display: flex;
+  }
+  
+  nav ul li {
+    margin-right: 20px;
+  }
+  
+  nav ul li:last-child {
+    margin-right: 0;
+  }
+  
+  nav ul li a {
+    text-decoration: none;
+    color: #fff;
+    font-weight: 600;
+    transition: color 0.3s;
+  }
+  
+  nav ul li a:hover {
+    color: #005a4c; /* Darker teal on hover */
+  }
+  
+  /* Add styles for the welcome message */
+  .navbar .welcome-message {
+    font-weight: 600;
+    margin-right: 10px;
+  }
+  
+  /* Adjust the button styles if needed */
+  .navbar button {
+    background-color: #fff;
+    color: #009688;
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s;
+  }
+  
+  .navbar button:hover {
+    background-color: #009688;
+    color: #fff;
+  }
+/* Add margin-right to the welcome message for spacing */
+.navbar .welcome-message {
+    font-weight: 600;
+    margin-right: 10px; /* Adjust the margin as needed for spacing */
+  }
+  
+  /* Adjust the button styles if needed */
+  .navbar button {
+    background-color: #fff;
+    color: #009688;
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s;
+    margin-left: 10px; /* Add margin to the left for spacing */
+  }
+  
+  /* Add margin-left to the button for spacing */
+  .navbar button + .welcome-message {
+    margin-left: 10px; /* Adjust the margin as needed for spacing */
+  }
+    
